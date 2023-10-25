@@ -82,34 +82,3 @@ const getAverage = arr => Math.floor(arr.reduce((a, c) => a + c) / arr.length)
 console.log(averageNum([2, 2, 2, 2]), 2)
 console.log(averageNum([1, 2, 3, 4, 5, ]),3 )
 console.log(averageNum([1, 1, 1, 1, 1, 1, 1, 2]),1 )
-
-
-// You will be given an array of numbers in which two numbers accur only once and the rest occur twice.
-// Your task will be to return the sum of numbers that occur only once.
-
-// Example: repeats ([4,5,7,5,4,8]) = 15 because only the numbers  7 and 8 occur only once, and thier sum is 15.
-// Every other number occurs twice.
-
-// repeats([4,5,7,5,4,8]), 15)
-// repeats([9,10,19,13,19,13]), 19)
-
-
-// filter the arr -> singles - indexOf(n) === lastIndexOf(n)
-// sum the singles - reduce
-function returnSumNonReps(arr) {
-   return arr.reduce((sum, num) => {
-      if (arr.indexOf(num) === arr.lastIndexOf(num)) {
-         return sum + num;
-      }
-      return sum;
-   }, 0);
-}
-
-console.log(returnSumOfNonReps([4, 5, 7, 5, 4, 8, 10]), 25)
-console.log(returnSumOfNonReps([9, 10, 19, 13, 19, 13]), 19)
-
-function returnSumOfNonReps(arr) {
-   return arr.filter( n => arr.indexOf(n) === arr.lastIndexOf(n)).reduce((a, c) => a + c, 0)
-}
-console.log(returnSumOfNonReps([4, 5, 7, 5, 4, 8]), 15)
-console.log(returnSumOfNonReps([9, 10, 19, 13, 19, 13]), 19)
