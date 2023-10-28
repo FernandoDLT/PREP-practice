@@ -76,6 +76,15 @@ function addEmUp(arr) {
 
 console.log(addEmUp(['5', '0', 9, 3, 2, 1, '9', 6, 7]), 42)
 console.log(addEmUp([9, 3, '7', '3']), 22)
+
+function addSingles(arr) {
+   return arr.reduce((a, c) => a+ +c, 0)
+}
+addSingles
+console.log(addSingles(['5', '0', 9, 3, 2, 1, '9', 6, 7]), 42)
+console.log(addSingles([9, 3, '7', '3']), 22)
+
+
 // -----------------------------------------------------------------------------------------------------------
 
 
@@ -97,7 +106,7 @@ function averageNum(arr) {
    // let sum = arr.reduce((a, c) => a + c, 0)
    let sum = arr.reduce((a, c) => a + c, 0)
    let average = sum / arr.length
-   let roundAvg = math.floor(average) 
+   let roundAvg = Math.floor(average) 
    return roundAvg
 
    // // avg div sum / total num of nums in arr
