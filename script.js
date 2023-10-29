@@ -55,7 +55,8 @@ fizzBuzz(15) //1,2,fizz,4,buzz,fizz,7,8,fizz,buzz,11,fizz,13,14,fizzbuzz
 // -----------------------------------------------------------------------------------------------------------
 
 // --Sum Mixed Arrays--
-// Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+// Given an array of integers as strings and numbers, 
+// return the sum of the array values as if all were numbers.
 
 // Return your answer as a number.
 
@@ -80,9 +81,11 @@ console.log(addEmUp([9, 3, '7', '3']), 22)
 function addSingles(arr) {
    return arr.reduce((a, c) => a+ +c, 0)
 }
-addSingles
-console.log(addSingles(['5', '0', 9, 3, 2, 1, '9', 6, 7]), 42)
+
 console.log(addSingles([9, 3, '7', '3']), 22)
+console.log(addSingles([9, 3, '7', '3']), 42)
+// console.log(addSingles(['5', '0', 9, 3, 2, 1, '9', 6, 7]), 42)
+// console.log(addSingles([9, 3, '7', '3']), 22)
 
 
 // -----------------------------------------------------------------------------------------------------------
