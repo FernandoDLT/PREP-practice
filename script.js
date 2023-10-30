@@ -173,5 +173,19 @@ console.log(returnSumOfNonReps([9, 10, 19, 13, 19, 13]), 19)
 // solve([[1,2],[3,4],[5,6]]),8)
 // solve([[1,2,3],[3,4,6,6,7],[8,9,10,12,5,6]]),72)
 
-// Hint: You have an array full of arrays. Map through the parent array and make sure each sub array is a set aka no duplicate numbers. 
-// Once each sub array contains no duplicates you can just reduce multiplying the length of each sub array together to get the total combinations 
+// Hint: You have an array full of arrays. Map through the parent array and make sure each sub array is a set aka no duplicate numbers.
+// Once each sub array contains no duplicates you can just reduce multiplying the length of each sub array together to get the total combinations
+
+function solve(arr){
+   //map -> arr -> with dupes removed
+   //[1,2],[4,4],[5,6,6] [1,2],[4],[5,6]
+   //reduce -> product 2*1*2 = 4 
+return arr.map(sS => new Set(sS).size).reduce((a,c)=>a*c,1)
+
+}
+// const solve = arr => arr.reduce((a,c) => a * new Set(c).size, 1)
+
+console.log(solve([[1,2],[4],[5,6]]),4)
+// solve([[1,2],[4,4],[5,6,6]]),4)
+// solve([[1,2],[3,4],[5,6]]),8)
+// solve([[1,2,3],[3,4,6,6,7],[8,9,10,12,5,6]]),72)
