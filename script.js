@@ -189,3 +189,32 @@ console.log(solve([[1,2],[4],[5,6]]),4)
 // solve([[1,2],[4,4],[5,6,6]]),4)
 // solve([[1,2],[3,4],[5,6]]),8)
 // solve([[1,2,3],[3,4,6,6,7],[8,9,10,12,5,6]]),72)
+// ------------------------------------------------------------------------------
+
+// The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+
+// Examples
+// "din"      =>  "((("
+// "recede"   =>  "()()()"
+// "Success"  =>  ")())())"
+// "(( @"     =>  "))(("
+
+
+// str - str mod
+// each l sig l -> (
+// each I is not sig -> )
+// ste -> str ()
+
+
+function encodeDupes(str) {
+  // toLowerCase
+  // split -> map indexOf === lastIndexOf ? ')' : '(' -> join -> join
+  return str.toLowerCase()
+            .split('')
+            .map((c, i, a) => a.indexOf(c) === a.lastIndexOf(c) ? '(' : ')')
+            .join('')
+}
+
+console.log(encodeDupes('din'), '(((')
+console.log(encodeDupes('recede'), '()()()')
+console.log(encodeDupes('success'), ')())()())')
